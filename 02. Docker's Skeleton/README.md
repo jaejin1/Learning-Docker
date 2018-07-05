@@ -2,7 +2,7 @@ Docker는 Container를 구동시킬 수 있는 환경만 구성되어 있다면,
 
 ### Client-Server Model
 
-Docker는 **서비스 요청자(Docker Client)와 제공자(Docker Server)**간의 작업이 분리되어 동작하는 Client-Server Model로 되어 있으며 Docker Client는 **REST API**를 사용하여 Docker Server를 제어한다.
+Docker는 **서비스 요청자(Docker Client)와 제공자(Docker Server)** 의 작업이 분리되어 동작하는 Client-Server Model로 되어 있으며 Docker Client는 **REST API** 를 사용하여 Docker Server를 제어한다.
 
 * Docker Client: `docker CLI`
 * Docker Server: `docker daemon`
@@ -15,13 +15,15 @@ Docker는 **서비스 요청자(Docker Client)와 제공자(Docker Server)**간�
 * Network
 * Data Volumes
 
-![Docker Engine](../Image/Docker/DockerEngine.png)
+![Docker Engine](../Image/DockerEngine.png)
 
 [출처 : Docker Docs](https://docs.docker.com/engine/docker-overview/#docker-engine)
 
 ### 좀더 자세히
 
 Docker Client는 Docker Daemon과 UNIX socket 또는 REST API를 사용하여 통신을 하며, Docker Daemon이 Container를 구축, 실행 및 배포할 수 있도록 한다. Docker Client와 Daemon은 동일한 시스템에서 실행될 수도 있고, Docker Client를 원격으로 Docker Daemon에 연결하여 사용할 수도 있다.
+
+![Docker Engine](../Image/Dockerarchitecture.png)
 
 [출처 : Docker Docs](https://docs.docker.com/engine/docker-overview/#docker-engine)
 
@@ -86,7 +88,7 @@ Service를 사용하면, 여러 개의 Docker Daemon들로 이루어진 영역 �
   smartentry/ubuntu                                         ubuntu with smartentry                          0                                       [OK]
   ~~~
 
-  **Docker Hub**에는 Community Version의 Image들이 포함되어 있다. 누구나 새로운 Image를 Docker Hub에 push할 수 있지만 해당 Image들의 품질이나 호환성을 Docker가 보장하지 않는다. 대신 **Docker Store**에는 공인된 업체를 통해 승인된 Image들이 포함되어 있다. 이러한 Image들은 Vendor들에 의해 직접 게시되고 유지/관리 된다. 또한 docker Certified 로고는 Image에 대한 품질, 출처 및 지원에 대한 보증을 제공한다. 공식 Image는 `OFFCIAL`로, 그 외의 Community Image는 `AUTOMATED`에 분류된다.
+  **Docker Hub** 에는 Community Version의 Image들이 포함되어 있다. 누구나 새로운 Image를 Docker Hub에 push할 수 있지만 해당 Image들의 품질이나 호환성을 Docker가 보장하지 않는다. 대신 **Docker Store** 에는 공인된 업체를 통해 승인된 Image들이 포함되어 있다. 이러한 Image들은 Vendor들에 의해 직접 게시되고 유지/관리 된다. 또한 docker Certified 로고는 Image에 대한 품질, 출처 및 지원에 대한 보증을 제공한다. 공식 Image는 `OFFCIAL`로, 그 외의 Community Image는 `AUTOMATED`에 분류된다.
 
 2. Container로 구성할 image를 Docker Store 및 Hub로 부터 `docker pull [OPTIONS] NAME[:TAG|@DIGEST]`를 이용하여 Pull 받는다.
 
