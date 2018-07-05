@@ -8,7 +8,7 @@ Container는 가상화 방식의 한 종류이다. 하지만 흔히 우리가 �
 
 VM은 하나의 서버를 여러 서버로 전환시키는 물리적 하드웨어의 추상화로 **Hypervior 기반의 시스템 가상화 이다.** hypervisor는 기반이 되는 시스템 안에 또 다른 시스템을 구동 시킬 수 있게 시스템의 각 요소들을 가상화 해서 제공한다. 이 때 기반 시스템을 보통 Host 시스템이라 하고 Hypervisor위에 돌아가는 시스템을 가상 시스템이라 한다. Hypervisor는 Host 시스템의 자원을 기반으로 가상 시스템이 독립적으로 움직일 수 있도록 한다. 따라서 Hypervisor를 사용하여 여러 대의 VM을 단일 시스템에서 실행할 수 있지만, 호스트 시스템의 하드웨어 자원에 제한을 받는다.
 
-![Containers and virtual machines](../Image/Containers and virtual machines.png)
+![Containers and virtual machines](../Image/Containersandvirtualmachines.png)
 
 [출처 : Docker Docs](https://docs.docker.com/get-started/#images-and-containers)
 
@@ -16,7 +16,7 @@ VM은 하나의 서버를 여러 서버로 전환시키는 물리적 하드웨�
 
 반면 Container는 공유된 운영체제에서 격리되어 실행할 수 있는 형식으로 소프트웨어를 가상화하는 방법이다. Hypervisor처럼 시스템의 전반적인 것을 가상화하는 것이 아닌 Application을 구동할 수 있는 환경 즉, CPU와 Memory영역 등을 가상화하고 구동하는데 필요한 운영체제나 라이브러리는 호스트시스템과 공용으로 사용한다.
 
-![Containers and virtual machines](../Image/Containers and virtual machines2.png)
+![Containers and virtual machines](../Image/Containersandvirtualmachines2.png)
 
 [출처 : Docker Docs](https://docs.docker.com/get-started/#images-and-containers)
 
@@ -172,7 +172,7 @@ l
 아래는 Image와 Container Layer를 도식화한 것이다.
 
 
-![Images and layers](../Image/Images and layers.png)
+![Images and layers](../Image/Imagesandlayers.png)
 
 [출처 : Docker Docs](https://docs.docker.com/storage/storagedriver/#images-and-layers)
 
@@ -239,7 +239,7 @@ Local Docker의 File System에 저장된 실제 Container 크기
 
 동일한 Image를 바탕으로 기동된 Container는 각각의 Container Layer만 추가되며, Image Layer는 공유하여 사용한다는 사실을 알 수 있다. 또한 Container는 개별적으로 Container Layer를 갖고 해당 Layer에 모든 변경된 내용이 저장되기 때문에, 여러 Container가 동일한 기본 Image를 공유하여 사용하면서 Container 자신의 Data 상태를 가질 수 있다. 이러한 특성으로 인해, Docker Container는 더욱 가벼워지고 기동 속도가 빨라질 수 있는 것이다.
 
-![Images and layers](../Image/Images and layers2.png)
+![Images and layers](../Image/Imagesandlayers2.png)
 
 [출처 : Docker Docs](https://docs.docker.com/storage/storagedriver/#images-and-layers)
 
